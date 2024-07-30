@@ -1,0 +1,35 @@
+{% extends 'aplicacionN1/base.html' %}
+
+{% load static %}
+
+{% block title %} CoderHouse | Agregar Cursos {% endblock title %}
+
+{% block contenido %}
+
+<table class="table table-borderless v-align-center">
+    <tbody>
+        </section>
+            <tr>
+                <h3 class="section-title text-center">Nuevo curso</h3>
+                <td>
+                    <form action="" method="POST">
+                            {% csrf_token %}
+                        
+                        <table class="section-title text-center">
+                            {{ formaddCurso.as_table }}
+                        </table>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="row m-2">
+                                        <button class="btn btn-primary rounded" >Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </td>
+            </tr>
+    </tbody>
+</table>   
+
+
+{% endblock contenido %}

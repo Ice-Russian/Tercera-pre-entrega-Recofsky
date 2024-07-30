@@ -1,0 +1,33 @@
+{% extends 'aplicacionN1/base.html' %}
+
+{% load static %}
+
+{% block title %} CoderHouse | Agregar Estudiantes {% endblock title %}
+
+{% block contenido %}
+
+<table class="table table-borderless v-align-center">
+    <tbody>
+        </section>
+            <tr>
+                <h3 class="section-title text-center">Nuevo Estudiante</h3>
+                <td>
+                    <form action="" method="POST">
+                            {% csrf_token %}
+                        <table>
+                            {{ formaddEstudiante.as_table }}
+                        </table>
+                    </form>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="row m-2">
+                                        <button class="btn btn-primary rounded" >Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </td>
+            </tr>
+    </tbody>
+</table>   
+{% endblock %}

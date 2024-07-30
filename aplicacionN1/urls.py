@@ -5,8 +5,11 @@ urlpatterns = [
     path('', inicio, name='index'),
     path('cursos/', curso, name='cursos'),
     path('estudiantes/', estudiantes, name='estudiantes'),
-    path('profesores/', profesores, name='profesores'),
-    path('entregables/', entregables, name='entregables'),
-    path('curso-formulario/', form_con_api, name="CursoFormulario"),
-    path('buscar-form-con-api/', buscar_form_con_api, name="Buscar_Form_Con_Api"),
+    path('profesores/', agregar_profesor, name='profesores'),
+    path('entregables/', entrega, name='entregables'),
+    path('agregarcursos/', agregar_curso, name="agregarcursos"),
+    path('buscarcursos/', buscar_curso, name="buscarcursos"),
+    path('agregarestudiantes/', agregar_estudiante, name='agregarestudiantes'),
+    path('buscarestudiantes/', buscar_estudiante, name='buscarestudiantes'),
+
 ]
