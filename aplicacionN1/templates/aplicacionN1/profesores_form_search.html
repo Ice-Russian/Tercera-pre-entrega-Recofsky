@@ -1,0 +1,34 @@
+{% extends 'aplicacionN1/base.html' %}
+
+{% load static %}
+
+{% block title %} CoderHouse | Buscar Profesor {% endblock title %}
+
+{% block contenido %}
+
+    <table class="table table-borderless v-align-center">
+        <tbody>
+            </section>
+                <tr>
+                    <h3 class="section-title text-center">Buscar Profesor</h3>
+                    <td>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <table>
+                                {{ formsearchProfesor.as_table }}
+                            </table>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="row m-3">
+                                            <button class="btn btn-primary rounded" >Enviar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </td>
+                </tr>
+        </tbody>
+    </table>   
+    
+    
+{% endblock %}

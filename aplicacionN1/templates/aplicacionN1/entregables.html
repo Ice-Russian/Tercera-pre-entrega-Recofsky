@@ -3,12 +3,49 @@
 {%block titulo%} CoderHouse | Entregables {%endblock%}
 
 {% block contenido %}
-    <section  id="service" class="section pt-0">
-        <div class="container">
-            <h6 class="section-title text-center">Entragables</h6>
-            <h6 class="section-subtitle text-center mb-5 pb-3">Adjunte aqui su trabajo!</h6>
-        </div>
-    </section>
+<section  id="service" class="section pt-0">
+    <div class="container">
+        <h6 class="section-title text-center">Entragables</h6>
+        <h6 class="section-subtitle text-center mb-5 pb-3">Adjunte aqui su trabajo!</h6>
+    </div>
+</section>
+<table class="table table-borderless v-align-center">
+    <tbody>
+        </section>
+            <tr>
+                <h3 class="section-title text-center">Entregas</h3>
+                <td>
+                    <form action="" method="POST">
+                            {% csrf_token %}
+                        
+                        <table class="section-title text-center">
+                            {{ formEntregables.as_table }}
+                        </table>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="row m-2">
+                                        <button class="btn btn-primary rounded" >Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </td>
+            </tr>
+    </tbody>
+</table>   
+
+
+
+
+
+
+
+{% comment %}   !Proximamente.
+                    !En desarrollo... {% comment %}
+
+
+
+    
     <section id="portfolio" class="section portfolio-section">
         <div class="container">
             <h6 class="section-title text-center">Modificaciones</h6>
@@ -62,4 +99,7 @@
             </div>   
         </div>            
     </section>
+
+{% endcomment %}
+
 {% endblock %}

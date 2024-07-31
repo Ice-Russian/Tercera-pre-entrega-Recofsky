@@ -1,39 +1,39 @@
 {% extends 'aplicacionN1/base.html' %}
 
+{% load static%}
+
 {%block titulo%}CoderHouse | Profesores{%endblock%}
 
+
 {% block contenido %}
+
+
 <section  id="service" class="section pt-0">
     <div class="container">
         <h6 class="section-title text-center">Profesores</h6>
-        <h6 class="section-subtitle text-center mb-5 pb-3">Agregue un profesor a nuestra base de datos</h6>
+        <h6 class="section-subtitle text-center mb-5 pb-3">Agregue un Profesor a nuestra lista!</h6>
     </div>
 </section>
-<table class="table table-borderless v-align-center">
-        
-    <tbody>
-        </section>
-            <tr>
-                <td>
-                    <form action="" method="POST">
-                            {% csrf_token %}
-                        <table>
-                            {{ formaddProfesores.as_table }}
-                        </table>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="row m-2">
-                                        <button class="btn btn-primary rounded" >Enviar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </td>
-            </tr>
-    </tbody>
-</table>   
+
+<section id="portfolio" class="section portfolio-section">
+    <div class="container">
+        <h6 class="section-title text-center">Modificaciones</h6>
+        <div>
+            <a class="nav-link" href="{% url 'agregarprofesor' %}" data-filter=".add" >
+                Nuevo
+            </a>
+            <a class="nav-link" href="{% url 'buscarprofesor' %}" data-filter=".search">
+                Buscar
+            </a>
+            <a class="nav-link" href="#" data-filter=".delete">
+                <p class="text-muted">Eliminar</p>
+            </a>
+            <a class="nav-link" href="#" data-filter=".actualice">
+                <p class="text-muted">Actualizar</p>
+            </a>
+        </div> 
+    </div>
+</section>  
 
 
 

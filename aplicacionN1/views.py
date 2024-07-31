@@ -46,7 +46,7 @@ def agregar_estudiante(request):
             estudiantes = Estudiante(nombre=informacion["nombre"], apellido=informacion["apellido"], email=informacion["email"])
             estudiantes.save()
 
-            return render(request, "aplicacionN1/estudiantes.html")
+            return render(request, "aplicacionN1/AccionExitosa.html")
     else:
         formaddEstudiante = EstudianteFormulario()
 
@@ -66,7 +66,7 @@ def agregar_profesor(request):
     else:
         formaddProfesores = ProfesorFormulario()
 
-    return render(request, "aplicacionN1/Profesores.html", {"formaddProfesores": formaddProfesores})
+    return render(request, "aplicacionN1/profesor_form_add.html", {"formaddProfesores": formaddProfesores})
 
 # Fin Agregar
 
@@ -95,27 +95,39 @@ def buscar_estudiante(request):
             informacion = formsearchEstudiante.cleaned_data
             
             estudiantes = Estudiante.objects.filter(nombre__icontains=informacion["nombre"])
-            return render(request, "aplicacionN1/estudiantes_print.html", {"estudiante": estudiantes})
+            return render(request, "aplicacionN1/estudiantes_print.html", {"estudiantes": estudiantes})
     else:
         formsearchEstudiante = BuscarEstudianteForm()
 
     return render(request, "aplicacionN1/estudiantes_form_search.html", {"formsearchEstudiante": formsearchEstudiante})
+
+def buscar_profesor(request):
+    if request.method == "POST":
+        formsearchProfesor = BuscarEstudianteForm(request.POST)
+
+        if formsearchProfesor.is_valid():
+            informacion = formsearchProfesor.cleaned_data
+            
+            profesores = Profesor.objects.filter(nombre__icontains=informacion["nombre"])
+            return render(request, "aplicacionN1/profesores_print.html", {"profesores": profesores})
+    else:
+        formsearchProfesor = BuscarEstudianteForm()
+
+    return render(request, "aplicacionN1/profesores_form_search.html", {"formsearchProfesor": formsearchProfesor})
 
 # Fin Busqueda
 
 # Entregable
 
 def entrega(request):
-    if request.method == "POST":
-        formEntregables = EntregableFormulario(request.POST) # Aqui me llega la informacion del html
-        # print(miFormulario)
+    if request.method == 'POST':
+        formEntregables = EntregableFormulario(request.POST)
         if formEntregables.is_valid():
             informacion = formEntregables.cleaned_data
-            
-            entregable = Entregable(nombre=informacion["nombre"], fecha_de_entrega__date=informacion["fecha_de_entrega"], entregado=informacion["entregado"])
+            entregable = Entregable(nombre=informacion["nombre"], fecha_de_entrega=informacion["fecha_de_entrega"], entregado=informacion["entregado"])
             entregable.save()
-
-            return render(request, "aplicacionN1/index.html")
+            
+            return render(request, "aplicacionN1/AccionExitosa.html")
     else:
         formEntregables = EntregableFormulario()
 

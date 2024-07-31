@@ -22,18 +22,25 @@
     <tbody>
         {% for estudiante in estudiantes %}
         <tr>
-            <td>{{ estudiantes.nombre }}</td>
-            <td>{{ estudiantes.apellido }}</td>
-            <td>{{ estudiantes.email }}</td>
+            <th scope="row">-</th>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+            <td>{{ estudiante.email }}</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 <div class="container">
     <div class="row">
-            <button class="btn btn-primary rounded" >
-                Volver
-            </button>
+        <div class="row mt-2">
+            <ul class="navbar-nav ml-auto">                     
+                <li class="nav-item">
+                    <button class="btn btn-primary rounded">
+                        <h6 class="nav-link" href="{% url 'index' %}">Volver</h6>
+                    </button>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 {% endblock contenido%}

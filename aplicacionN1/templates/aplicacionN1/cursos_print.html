@@ -20,7 +20,7 @@
     <tbody>
         <tr>
             {% for curso in cursos %}
-            <th scope="row">1</th>
+            <th scope="row">-</th>
             <td>{{ curso.nombre }}</td>
             <td>{{ curso.comision }}</td>
             {% endfor %}
@@ -30,9 +30,13 @@
 <div class="container">
     <div class="row">
         <div class="row m-2">
-            <button class="btn btn-primary rounded" >
-                <p class="nav-link" href="{% url 'buscarestudiantes' %}">Enviar</p>
-            </button>
+            <ul class="navbar-nav ml-auto">                     
+                <li class="nav-item">
+                    <button class="btn btn-primary rounded">
+                        <h6 class="nav-link" href="{% url 'index' %}">Volver</h6>
+                    </button>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
